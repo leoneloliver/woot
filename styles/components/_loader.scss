@@ -1,0 +1,74 @@
+.bg-loader{
+    background-image: linear-gradient(to top, transparent, rgba(2, 55, 83, 0.13)), linear-gradient(to right, rgb(164 169 170 / 54%), rgb(120 124 126 / 60%), rgb(102 115 126 / 60%));
+    background-size: 100% 100%, 2000% 100%;
+    animation: move 1s infinite;
+    opacity: 0.2;;
+}
+
+  
+@keyframes move {
+    from {background-position: center center, left center;}
+    to {background-position: center center, right center;}
+}
+
+
+.img-loader{
+    height:  189px;
+}
+.title-loader{
+    height: 45px;
+    width: 85%;
+    margin: 32px 0px 20px;
+}
+.short-desc-loader{
+    height: 26px;
+    width: 100%;
+    margin: 12px 0px 10px;
+}
+.desc-loader{
+    height: 26px;
+    width: 80%;
+    margin: 12px 0px 10px;
+}
+.long-desc-loader{
+    height: 26px;
+    width: 50%;
+    margin: 12px 0px 10px;
+}
+
+
+
+.img-load-detail{
+   
+    width: 100%;
+    height: 450px;
+    text-align: center;
+    margin: 0 auto;
+}
+.title-load-detail{
+    text-align: center;
+    max-width: 70%;
+    height: 80px;
+    
+}
+.hr{
+    height: 9px;
+    margin-top: 50px;
+}
+.date-load-detail{
+    height: 25px;
+    margin-top: 30px;
+    width: 60%;
+
+}
+.content-title-load-detail{
+    height: 40px;
+    margin-top: 30px;
+    width: 65%;
+
+}
+.text-load-detail{
+    height: 30px;
+    margin-top: 20px;
+    width: 50%;
+}
