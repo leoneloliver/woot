@@ -162,13 +162,11 @@ const Details = ({ productData }) => {
         </nav>
 
 
-       
-
       </div>
       {loading && <LoaderDetails />}
       {!loading && productData.map((product) => (
         <div key={product.slug} >
-          <div className="container mx-auto px-4 max-w-screen-xl flex flex-wrap grid grid-cols-2 gap-4">
+          <div className="container mx-auto px-4 max-w-screen-xl flex flex-wrap grid xl:grid-cols-2  sm:grid-cols-2 xs:grid-cols-1 gap-4">
 
             <div>
 

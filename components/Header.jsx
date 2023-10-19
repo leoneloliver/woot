@@ -19,7 +19,7 @@ export default function Header({router}) {
           <a href="/" className="flex items-center">
             <img
               src="../img/woot-an-amazon-company.svg"
-              className="h-16 ml-24"
+              className="h-16 ml-24 logo-part"
               alt="Flowbite Logo"
             />
             
@@ -31,10 +31,10 @@ export default function Header({router}) {
               alt="Flowbite Logo"
             />
 
-          <div>
+          <div className="container-ico">
             <ul className="flex flex-row">
-              <li className="px-2 text-4xl text-gray-400">< MdOutlineForum /></li>
-              <li className="px-2 text-4xl text-gray-400 border-x border-gray-500"><FiUser /></li>
+              <li className="px-2 text-4xl text-gray-400 forum">< MdOutlineForum /></li>
+              <li className="px-2 text-4xl text-gray-400 border-x border-gray-500 user"><FiUser /></li>
               <li className="px-2 text-4xl"><FiShoppingCart /></li>
             </ul>
           </div>
@@ -42,7 +42,7 @@ export default function Header({router}) {
 
             
         </div>
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto border-b-1">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto border-b-1 menu-container">
             <ul className="flex flex-row items-center justify-between max-w-screen-xl ml-20">
             <li className="px-4 py-2"><Link href="/">All Deals</Link></li>
             

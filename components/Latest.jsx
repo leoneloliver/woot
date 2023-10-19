@@ -61,7 +61,7 @@ function Latest() {
       </h3>
       <p>Our deepest discounts, one day only.</p>
     </div>
-      <div className="container mx-auto px-4 max-w-screen-xl flex flex-wrap grid grid-cols-4 gap-4">
+      <div className="container mx-auto px-4 max-w-screen-xl flex flex-wrap grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4">
         {loading ? <Loader /> : latests.map((product) => (
           <Link href={product.slug} key={product.slug} className="col-3 col-6-md col-12-sm">
             <Card product={product} />

@@ -40,7 +40,7 @@ const Details = ({ productsData }) => {
             </h3>
            
             </div>
-            <div className="container mx-auto px-4 max-w-screen-xl flex flex-wrap grid grid-cols-4 gap-4">
+            <div className="container mx-auto px-4 max-w-screen-xl flex flex-wrap grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4">
             {loading && <Loader />}
             {!loading && productsData.map((latest) => (
                 
