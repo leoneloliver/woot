@@ -44,11 +44,11 @@ export default function Header({router}) {
         </div>
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto border-b-1 menu-container">
             <ul className="flex flex-row items-center justify-between max-w-screen-xl ml-20">
-            <li className="px-4 py-2"><Link href="/">All Deals</Link></li>
+              <li className="px-4 py-2 hover:text-green-700"><Link href="/">All Deals</Link></li>
             
-              <li className="px-4 py-2"><Link className={`hover:text-green-700 ${currentPathname.includes("home-and-kitchen") ? "underline text-green-700" : ""}`} href="../category/home-and-kitchen">Home & Kitchen</Link></li>
-              <li className="px-4 py-2"><Link className={`hover:text-green-700 ${currentPathname.includes("electronics") ? "underline text-green-700" : ""}`} href="../category/electronics">Electronics</Link></li>
-              <li className="px-4 py-2"><Link className={`hover:text-green-700 ${currentPathname.includes("computers") ? "underline text-green-700" : ""}`} href="../category/computers">Computers</Link></li>
+              <li className={`px-4 py-2 hover:text-green-700 ${currentPathname.includes("home-and-kitchen") ? "underline text-green-700" : ""}`}><Link href={`/category/home-and-kitchen`}>Home & Kitchen</Link></li>
+              <li className={`px-4 py-2 hover:text-green-700 ${currentPathname.includes("electronics") ? "underline text-green-700" : ""}`}><Link href={`/category/electronics`}>Electronics</Link></li>
+              <li className={`px-4 py-2 hover:text-green-700 ${currentPathname.includes("computers") ? "underline text-green-700" : ""}`}><Link href={`/category/computers`}>Computers</Link></li>
               <li className="px-4 py-2">Tools & Garden</li>
               <li className="px-4 py-2">Sports & Outdoors</li>
               <li className="px-4 py-2">Grocery & Household</li>

@@ -53,11 +53,15 @@ nav, .footer{
     padding-bottom: 2px !important;
     li{
         min-width: 120px;
-        text-align: center;
         line-height: 20px;
+        min-width: fit-content;
+        text-align: center;
     }
 }
 @media (max-width:650px)  {
+    .slick-arrow{
+        display: none !important ;
+    }
     .forum, .user{
         display: none;
     }
@@ -77,14 +81,21 @@ nav, .footer{
         }
     }
     .menu-container{
-        margin-left: -30px;
-        background: rgb(231, 231, 231);
+        margin-left: -18px;
+        background: #f2f4f6;
         li{
-            padding: 10px 6px;
-            border-right: 1px solid #000;
+            padding: 9px 15px;
             font-size: 0.8rem;
             line-height: 0.8rem;
-
+            background: #d8e1e6;
+            border-radius: 90px;
+            margin-right: 6px;
+            margin-top: 9px;
+            margin-bottom: 12px;
+            &.underline{
+                background-color: #3a7d3c;
+                color: #fff;
+            }
            
             a{
                 font-size: 0.8rem;

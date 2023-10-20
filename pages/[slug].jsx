@@ -67,7 +67,7 @@ const Details = ({ productData }) => {
         <link rel="icon" href='./img/favicon.ico' />
       </Head>
       <Header />
-      <div className='mt-4 container mx-auto px-4 max-w-screen-xl flex flex-wrap mb-20'>
+      <div className='mt-4 container mx-auto px-4 max-w-screen-xl flex flex-wrap mb-8 xl:mb-20 lg:mb-20 md:mb-12'>
 
         <nav className="flex" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
