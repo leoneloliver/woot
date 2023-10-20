@@ -6,6 +6,7 @@ import fetchData from '../utils/fetchData';
 import Carousel from "./Carousel";
 import Header from "./Header";
 import Footer from "./Footer";
+import CarouselProducts from "./CarouselProducts";
 
 function Latest() {
   const [latests, setLatests] = useState([]);
@@ -69,6 +70,7 @@ function Latest() {
 
         ))}
       </div>
+      <CarouselProducts />
       <Footer />
     </>
   );

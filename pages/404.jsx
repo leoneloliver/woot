@@ -4,7 +4,7 @@ import CarouselProducts from "../components/CarouselProducts";
 export default function Custom404() {
     return <>
         <Header />
-        <div className="container mx-auto px-4 max-w-screen-xl pt-12 pb-6">
+        <div className="container mx-auto px-4 max-w-screen-xl mt-8 pt-8 pb-6">
 
         <h3 className="text-3xl font-semibold text-green-700">
           Page not found! =(
