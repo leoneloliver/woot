@@ -34,7 +34,7 @@ const Details = ({ productsData }) => {
         <title>{productsData[0].linkedFrom.storeCollection.items[0].category.categoryName}</title>
         <meta name="description" content={metaTitle} />
   
-        <link rel="icon" href='./img/favicon.ico' />
+        <link rel="icon" href='../../img/favicon.ico' />
       </Head>
 
 
