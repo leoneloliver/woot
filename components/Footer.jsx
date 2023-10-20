@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
       <>
-      <div className="footer container mx-auto px-12 py-12 max-w-screen-xl text-xs flex flex-wrap grid grid-cols-4 gap-4 bg-gray-100 text-black mt-24">
+      <div className="footer container mx-auto px-12 py-12 max-w-screen-xl text-xs flex flex-wrap grid grid-cols-2 xl:grid-cols-4 md:grid-cols-2  gap-4 bg-gray-100 text-black mt-24">
         
             
 

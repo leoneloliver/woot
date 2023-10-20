@@ -5,7 +5,9 @@ import LoaderDetails from '../components/LoaderDetails';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import {FiClock} from 'react-icons/fi';
-import {AiTwotoneStar, AiOutlineStar} from 'react-icons/ai'
+import {AiTwotoneStar, AiOutlineStar} from 'react-icons/ai';
+import {BiCartDownload} from 'react-icons/bi';
+import CarouselProducts from '../components/CarouselProducts'
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from "@contentful/rich-text-types";
@@ -56,7 +58,7 @@ const Details = ({ productData }) => {
   const [loading, setLoading] = useState(true)
   setTimeout(() => {
     setLoading(false);
-  }, 1000);
+  }, 100);
 
   return (
 
@@ -181,7 +183,7 @@ const Details = ({ productData }) => {
               <p className='text-xs font-medium py-4'>Shipping <span className="text-xs font-bold">Standard</span></p>
               <p className="text-xs font-medium">Shipping to Alaska, Hawaii, and PO Boxes is not available for this item</p>
 
-              <button type="button" className="focus:outline-none text-white bg-orange-300 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-600 font-large rounded-lg  px-5 py-2.5 mr-2 mb-12 mt-8 text-3xl">Add to Cart</button>
+              <button type="button" className="btn-buy focus:outline-none text-white bg-orange-300 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-600 font-large rounded-lg px-5  pr-8 py-2.5 mr-2 mb-12 mt-8 text-3xl flex"><span className='mr-2'><BiCartDownload /></span>Add to Cart</button>
 
               <p className='flex flex-wrapper text-sm font-normal text-red-500 left-to-buy'><FiClock /> 4 hours left to buy</p>
 
@@ -205,6 +207,7 @@ const Details = ({ productData }) => {
         </div>
         
       ))}
+      <CarouselProducts />
       <Footer />
     </>
   );

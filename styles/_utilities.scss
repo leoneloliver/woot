@@ -1,7 +1,8 @@
 
 .mortimer{
     position: absolute;
-    margin: 70px 0px 0px 0px;
+    margin: 55px 0 0;
+    height: 105px;
 }
 .card, .left-to-buy{
     svg{
@@ -57,6 +58,15 @@ nav, .footer{
         min-width: fit-content;
         text-align: center;
     }
+}
+.logo-part{
+    height: 58px;
+    margin-bottom: -5px;
+    margin-top: -5px;
+    margin-left: 72px;
+}
+.btn-buy{
+    background: #ffb100;
 }
 @media (max-width:650px)  {
     .slick-arrow{

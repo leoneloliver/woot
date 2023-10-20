@@ -42,7 +42,7 @@ export default function Header({router}) {
 
             
         </div>
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto border-b-1 menu-container">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto border-b-1 menu-container pt-1">
             <ul className="flex flex-row items-center justify-between max-w-screen-xl ml-20">
               <li className="px-4 py-2 hover:text-green-700"><Link href="/">All Deals</Link></li>
             
