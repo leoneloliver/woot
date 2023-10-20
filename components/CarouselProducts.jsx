@@ -48,7 +48,7 @@ export default function CarouselProducts() {
 
   const query = `
   query{
-    storeCollection (limit: 100, order: sys_firstPublishedAt_ASC) {
+    storeCollection (limit: 8, order: sys_firstPublishedAt_ASC) {
       items{
         productName
         slug
