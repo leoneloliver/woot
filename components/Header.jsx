@@ -4,7 +4,6 @@ import { MdOutlineForum } from 'react-icons/md';
 import Bar from "./Bar";
 
 
-
 export default function Header({router}) {
 
   let currentPathname = "/";
@@ -38,21 +37,17 @@ export default function Header({router}) {
               <li className="px-2 text-4xl"><FiShoppingCart /></li>
             </ul>
           </div>
-
-
             
         </div>
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto border-b-1 menu-container pt-1">
             <ul className="flex flex-row items-center justify-between max-w-screen-xl ml-20">
               <li className="px-4 py-2 hover:text-green-700"><Link href="/">All Deals</Link></li>
-            
               <li className={`px-4 py-2 hover:text-green-700 ${currentPathname.includes("home-and-kitchen") ? "underline text-green-700" : ""}`}><Link href={`/category/home-and-kitchen`}>Home & Kitchen</Link></li>
               <li className={`px-4 py-2 hover:text-green-700 ${currentPathname.includes("electronics") ? "underline text-green-700" : ""}`}><Link href={`/category/electronics`}>Electronics</Link></li>
               <li className={`px-4 py-2 hover:text-green-700 ${currentPathname.includes("computers") ? "underline text-green-700" : ""}`}><Link href={`/category/computers`}>Computers</Link></li>
-              <li className="px-4 py-2">Tools & Garden</li>
-              <li className="px-4 py-2">Sports & Outdoors</li>
-              <li className="px-4 py-2">Grocery & Household</li>
-              
+              <li className={`px-4 py-2 hover:text-green-700 ${currentPathname.includes("tools-and-garden") ? "underline text-green-700" : ""}`}><Link href={`/category/tools-and-garden`}>Tools & Garden</Link></li>
+              <li className={`px-4 py-2 hover:text-green-700 ${currentPathname.includes("sports-and-outdoors") ? "underline text-green-700" : ""}`}><Link href={`/category/sports-and-outdoors`}>Sports & Outdoors</Link></li>
+              <li className={`px-4 py-2 hover:text-green-700 ${currentPathname.includes("grocery-and-household") ? "underline text-green-700" : ""}`}><Link href={`/category/grocery-and-household`}>Grocery & Household</Link></li>
             </ul>
         </div>
       </nav>
@@ -61,4 +56,3 @@ export default function Header({router}) {
     </>
   )
 }
-

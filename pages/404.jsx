@@ -1,10 +1,17 @@
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import CarouselProducts from "../components/CarouselProducts";
 export default function Custom404() {
     return <>
-        <div className="error-container">
-            
-            
-            <h1>Error 404!</h1>
-                     
-        </div>
+        <Header />
+        <div className="container mx-auto px-4 max-w-screen-xl pt-12 pb-6">
+
+        <h3 className="text-3xl font-semibold text-green-700">
+          Page not found! =(
+        </h3>
+        <CarouselProducts />
+        
+      </div>
+        <Footer />
     </>
 }
