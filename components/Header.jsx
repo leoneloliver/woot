@@ -17,7 +17,7 @@ export default function Header({router}) {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 border-b border-gray-500">
           <a href="/" className="flex items-center">
             <img
-              src="../img/woot-an-amazon-company.svg"
+              src="../../img/woot-an-amazon-company.svg"
               className="h-16 ml-24 logo-part"
               alt="Flowbite Logo"
             />
@@ -25,7 +25,7 @@ export default function Header({router}) {
           </a>
 
           <img
-              src="../img/mortimer.svg"
+              src="../../img/mortimer.svg"
               className="h-28 mortimer"
               alt="Flowbite Logo"
             />
