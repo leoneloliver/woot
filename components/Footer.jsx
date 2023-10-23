@@ -48,7 +48,7 @@ export default function Footer() {
        
       </div>
       <div className="border-gray-300 border-t text-center container mx-auto px-12 py-2 max-w-screen-xl text-xs bg-gray-100 text-black ">
-        <p className='flex text-center flex-wrap justify-center'>Developed by&nbsp;<a href="https://leo-frontend.netlify.app/" target="_blank" className='text-blue-500'>Leonel with</a>&nbsp;<AiFillHeart/>&nbsp;and&nbsp;&nbsp;<AiOutlineCoffee/></p>
+        <p className='flex text-center flex-wrap justify-center'>Developed by&nbsp;<a href="https://leo-frontend.netlify.app/" target="_blank" className='text-blue-500'>Leonel</a>&nbsp;with&nbsp;<AiFillHeart/>&nbsp;and&nbsp;&nbsp;<AiOutlineCoffee/></p>
       </div>
       </>
     )
