@@ -45,6 +45,7 @@ const SearchBar = () => {
                     required="required"
                     value={keyword}
                     onChange={(e) => setKeyword(e.target.value)}
+                    autoComplete="off"
     
                 />
                 <button type="submit" className="btn-search absolute top-0 right-0 h-full p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-orange-300">
