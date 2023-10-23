@@ -68,6 +68,14 @@ nav, .footer{
 .btn-buy{
     background: #ffb100;
 }
+.tabs{
+    ul{
+        list-style: none;
+        a{
+            cursor: pointer;
+        }
+    }
+}
 @media (max-width:650px)  {
     .slick-arrow{
         display: none !important ;

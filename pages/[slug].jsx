@@ -4,9 +4,9 @@ import Head from 'next/head';
 import LoaderDetails from '../components/LoaderDetails';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import {FiClock} from 'react-icons/fi';
-import {AiTwotoneStar, AiOutlineStar} from 'react-icons/ai';
-import {BiCartDownload} from 'react-icons/bi';
+import { FiClock } from 'react-icons/fi';
+import { AiTwotoneStar, AiOutlineStar } from 'react-icons/ai';
+import { BiCartDownload } from 'react-icons/bi';
 import CarouselProducts from '../components/CarouselProducts'
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -54,6 +54,12 @@ function renderOptions(links) {
 }
 
 const Details = ({ productData }) => {
+
+  const [activeTab, setActiveTab] = useState('details');
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+  };
 
   const [loading, setLoading] = useState(true)
   setTimeout(() => {
@@ -132,7 +138,7 @@ const Details = ({ productData }) => {
                   />
                 </svg>
                 <span className="inline-flex items-center text-xs font-medium text-cyan-600">
-                  {productData[0].category.categoryName} 
+                  {productData[0].category.categoryName}
                 </span>
               </div>
             </li>
@@ -154,12 +160,12 @@ const Details = ({ productData }) => {
                   />
                 </svg>
                 <span className="inline-flex items-center text-xs font-medium text-cyan-900">
-                {productData[0].productName.substring(0, 25)}...
+                  {productData[0].productName.substring(0, 25)}...
                 </span>
               </div>
             </li>
 
-            
+
           </ol>
         </nav>
 
@@ -188,7 +194,7 @@ const Details = ({ productData }) => {
               <p className='flex flex-wrapper text-sm font-normal text-red-500 left-to-buy'><FiClock /> 4 hours left to buy</p>
 
               <div className='mt-8 border-t border-gray-200 pt-4'>
-                <img src='../img/plus.png' className='-ml-3'/>
+                <img src='../img/plus.png' className='-ml-3' />
                 <p className='pt-2'>NETGEAR & Linksys Routers and Systems</p>
                 <p className='text-xs py-2'>The Internet is a fad. Prove me wrong.</p>
               </div>
@@ -196,16 +202,42 @@ const Details = ({ productData }) => {
             </div>
             <div>
 
-              <img src={product.picture.url} className="border border-gray-200 mb-8 p-4 rounded"/>
+              <img src={product.picture.url} className="border border-gray-200 mb-8 p-4 rounded" />
+
+              <div className='tabs -mb-4'>
+                <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500">
+                  <li className="mr-2">
+                    <a
+                      onClick={() => handleTabClick('details')}
+                      className={`inline-block p-4  bg-gray-100 rounded-t-lg border-t border-l border-r  border-gray-200 ${activeTab === 'details' ? 'active bg-white ' : ''}`}
+                    >
+                      Details
+                    </a>
+                  </li>
+                  <li className="mr-2">
+                    <a
+                      onClick={() => handleTabClick('specs')}
+                      className={`inline-block p-4 bg-gray-100 rounded-t-lg border-t border-l border-r  border-gray-200 ${activeTab === 'specs' ? 'active bg-white ' : ''}`}
+                    >
+                      Specs
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+
+
               <div className='border border-gray-200 p-4 rounded prod-descrition'>
-                {product.description && documentToReactComponents(product.description.json, renderOptions(product.description.links))}
+                {activeTab === 'details' && product.description && documentToReactComponents(product.description.json, renderOptions(product.description.links))}
+
+                {activeTab === 'specs' && product.specs && documentToReactComponents(product.specs.json, renderOptions(product.specs.links))}
 
               </div>
 
             </div>
           </div>
         </div>
-        
+
       ))}
       <CarouselProducts />
       <Footer />
@@ -226,6 +258,9 @@ export async function getServerSideProps(context) {
           url
         }
         description{
+          json
+        }
+        specs{
           json
         }
         price
