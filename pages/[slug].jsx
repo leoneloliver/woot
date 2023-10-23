@@ -189,6 +189,16 @@ const Details = ({ productData }) => {
               <p className='text-xs font-medium py-4'>Shipping <span className="text-xs font-bold">Standard</span></p>
               <p className="text-xs font-medium">Shipping to Alaska, Hawaii, and PO Boxes is not available for this item</p>
 
+              <div className='flex mt-6'>
+                <label for="quantity" className='text-xs font-medium pr-3'>Quantity:</label>
+                <select name="quantity" id="quantity" className='border border-gray-300 py-1 px-3 mr-3 -mt-2'>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <p className='text-xs font-medium'>Limit 3 per customer</p>
+              </div>
+
               <button type="button" className="btn-buy focus:outline-none text-white bg-orange-300 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-600 font-large rounded-lg px-5  pr-8 py-2.5 mr-2 mb-12 mt-8 text-3xl flex"><span className='mr-2'><BiCartDownload /></span>Add to Cart</button>
 
               <p className='flex flex-wrapper text-sm font-normal text-red-500 left-to-buy'><FiClock /> 4 hours left to buy</p>
