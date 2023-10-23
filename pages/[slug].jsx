@@ -190,7 +190,7 @@ const Details = ({ productData }) => {
               <p className="text-xs font-medium">Shipping to Alaska, Hawaii, and PO Boxes is not available for this item</p>
 
               <div className='flex mt-6'>
-                <label for="quantity" className='text-xs font-medium pr-3'>Quantity:</label>
+                <label htmlFor="quantity" className='text-xs font-medium pr-3'>Quantity:</label>
                 <select name="quantity" id="quantity" className='border border-gray-300 py-1 px-3 mr-3 -mt-2'>
                   <option value="1">1</option>
                   <option value="2">2</option>
