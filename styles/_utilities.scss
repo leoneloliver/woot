@@ -65,8 +65,13 @@ nav, .footer{
     margin-top: -5px;
     margin-left: 72px;
 }
-.btn-buy{
+.btn-buy, .btn-search{
     background: #ffb100;
+}
+.btn-search{
+    svg{
+        color: #000;
+    }
 }
 .tabs{
     ul{
@@ -74,6 +79,17 @@ nav, .footer{
         a{
             cursor: pointer;
         }
+    }
+}
+.search-bar{
+    min-width: 54%;
+}
+#default-search:focus{
+    outline: none;
+}
+@media (max-width:950px)  {
+    .search-bar{
+        display: none;
     }
 }
 @media (max-width:650px)  {

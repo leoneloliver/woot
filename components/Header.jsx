@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FiShoppingCart , FiUser} from 'react-icons/fi';
 import { MdOutlineForum } from 'react-icons/md';
+import SearchBar from '../components/SearchBar';
 import Bar from "./Bar";
 
 
@@ -29,7 +30,7 @@ export default function Header({router}) {
               className="h-28 mortimer"
               alt="Flowbite Logo"
             />
-
+          < SearchBar />
           <div className="container-ico">
             <ul className="flex flex-row">
               <li className="px-2 text-4xl text-gray-400 forum">< MdOutlineForum /></li>
