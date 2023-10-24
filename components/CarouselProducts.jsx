@@ -2,7 +2,6 @@ import Slider from "react-slick";
 import { useState, useEffect } from "react";
 import fetchData from '../utils/fetchData';
 import Card from '../components/Card';
-import Link from "next/link";
 
 export default function CarouselProducts() {
 
@@ -96,9 +95,9 @@ export default function CarouselProducts() {
         <div className="bg-gray-50 pt-4">
         <Slider {...settings}>
         {latests.map((product) => (
-          <Link href={product.slug} key={product.slug} className="col-3 col-6-md col-12-sm">
+          <a href={product.slug} key={product.slug} className="col-3 col-6-md col-12-sm">
           <Card product={product} />
-        </Link>
+        </a>
         ))}
       </Slider>
 

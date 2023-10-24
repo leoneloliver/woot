@@ -56,9 +56,14 @@ function renderOptions(links) {
 const Details = ({ productData }) => {
 
   const [activeTab, setActiveTab] = useState('details');
+  const [selectedPicture, setSelectedPicture] = useState(productData[0].picture.url);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
+  };
+
+  const handleThumbnailClick = (url) => {
+    setSelectedPicture(url);
   };
 
   const [loading, setLoading] = useState(true)
@@ -82,7 +87,7 @@ const Details = ({ productData }) => {
             <li className="inline-flex items-center">
               <a
                 href="/"
-                className="inline-flex items-center text-xs font-medium text-cyan-600"
+                className="underline inline-flex items-center text-xs font-medium text-cyan-600"
               >
                 <svg
                   className="w-3 h-3 mr-2.5"
@@ -137,9 +142,11 @@ const Details = ({ productData }) => {
                     d="m1 9 4-4-4-4"
                   />
                 </svg>
-                <span className="inline-flex items-center text-xs font-medium text-cyan-600">
+                
+                <a href={`category/${productData[0].category.categorySlug}`} className=" underline inline-flex items-center text-xs font-medium text-cyan-600">
                   {productData[0].category.categoryName}
-                </span>
+                </a>
+                
               </div>
             </li>
             <li aria-current="page">
@@ -211,8 +218,28 @@ const Details = ({ productData }) => {
 
             </div>
             <div>
+              <div className='flex'>
+                <img src={selectedPicture} className="main-picture border border-gray-200 mb-8 p-4 rounded max-w-[85%]" />
+                <div className='max-w-[15%]'>
+                  <div className='ml-2 mb-2'>
+                    <img
+                      src={product.picture.url}
+                      className={`thumb border border-gray-200 p-1 rounded hover:bg-gray-100 ${product.picture.url === selectedPicture ? 'bg-gray-200' : ''}`}
+                      onClick={() => handleThumbnailClick(product.picture.url)}
+                    />
+                  </div>
+                  {product.galleryCollection.items.map((item) => (
 
-              <img src={product.picture.url} className="border border-gray-200 mb-8 p-4 rounded" />
+                    <div className='ml-2 mb-2'>
+                      <img
+                        src={item.url}
+                        className={`thumb border border-gray-200 p-1 rounded hover:bg-gray-100 ${item.url === selectedPicture ? 'bg-gray-200' : ''}`}
+                        onClick={() => handleThumbnailClick(item.url)}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <div className='tabs -mb-4'>
                 <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500">
@@ -272,6 +299,11 @@ export async function getServerSideProps(context) {
         }
         specs{
           json
+        }
+        galleryCollection{
+          items{
+            url
+          }
         }
         price
         category{
