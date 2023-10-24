@@ -213,7 +213,7 @@ const Details = ({ productData }) => {
               <div className='mt-8 border-t border-gray-200 pt-4'>
                 <img src='../img/plus.png' className='-ml-3' />
                 <p className='pt-2'>Find the Best Deals in one Place</p>
-                <p className='text-xs py-2'>Let the deals find you...</p>
+                <p className='text-xs py-2'>Don't work to find deals. Let the deals find you.</p>
               </div>
 
             </div>
