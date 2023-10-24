@@ -212,8 +212,8 @@ const Details = ({ productData }) => {
 
               <div className='mt-8 border-t border-gray-200 pt-4'>
                 <img src='../img/plus.png' className='-ml-3' />
-                <p className='pt-2'>NETGEAR & Linksys Routers and Systems</p>
-                <p className='text-xs py-2'>The Internet is a fad. Prove me wrong.</p>
+                <p className='pt-2'>Find the Best Deals in one Place</p>
+                <p className='text-xs py-2'>Let the deals find you...</p>
               </div>
 
             </div>
