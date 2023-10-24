@@ -206,7 +206,7 @@ const Details = ({ productData }) => {
                 <p className='text-xs font-medium'>Limit 3 per customer</p>
               </div>
 
-              <button type="button" className="btn-buy focus:outline-none text-white bg-orange-300 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-600 font-large rounded-lg px-5  pr-8 py-2.5 mr-2 mb-12 mt-8 text-3xl flex"><span className='mr-2'><BiCartDownload /></span>Add to Cart</button>
+              <button type="button" className="btn-buy focus:outline-none text-white bg-orange-300 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-600 font-large rounded-lg px-5  pr-8 py-2.5 mr-2 mb-8 mt-8 text-3xl flex"><span className='mr-2'><BiCartDownload /></span>Add to Cart</button>
 
               <p className='flex flex-wrapper text-sm font-normal text-red-500 left-to-buy'><FiClock /> 4 hours left to buy</p>
 
@@ -218,10 +218,10 @@ const Details = ({ productData }) => {
 
             </div>
             <div>
-              <div className='flex'>
-                <img src={selectedPicture} className="main-picture border border-gray-200 mb-8 p-4 rounded max-w-[85%]" />
-                <div className='max-w-[15%]'>
-                  <div className='ml-2 mb-2'>
+              <div className='md:flex'>
+                <img src={selectedPicture} className="main-picture border border-gray-200 mb-4 p-4 rounded md:max-w-[85%]" />
+                <div className='md:max-w-[15%] flex md:block'>
+                  <div className='md:ml-2 mb-2 max-w-[20%] md:max-w-[100%]'>
                     <img
                       src={product.picture.url}
                       className={`thumb border border-gray-200 p-1 rounded hover:bg-gray-100 ${product.picture.url === selectedPicture ? 'bg-gray-200' : ''}`}
@@ -230,7 +230,7 @@ const Details = ({ productData }) => {
                   </div>
                   {product.galleryCollection.items.map((item) => (
 
-                    <div className='ml-2 mb-2'>
+                    <div className='ml-2 mb-2 max-w-[20%] md:max-w-[100%]'>
                       <img
                         src={item.url}
                         className={`thumb border border-gray-200 p-1 rounded hover:bg-gray-100 ${item.url === selectedPicture ? 'bg-gray-200' : ''}`}
