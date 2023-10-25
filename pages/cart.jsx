@@ -8,12 +8,23 @@ import CarouselProducts from '../components/CarouselProducts'
 export default function cart() {
 
     const [shoppingCart, setShoppingCart] = useState([]);
+    const [totalPrice, setTotalPrice] = useState("$0");
 
     const removeItemFromCart = (index) => {
         const updatedCart = [...shoppingCart];
         updatedCart.splice(index, 1);
         setShoppingCart(updatedCart);
         localStorage.setItem('shoppingCart', JSON.stringify(updatedCart));
+
+        // subtotal
+        let totalPrice = 0;
+        JSON.parse(localStorage.getItem('shoppingCart')).forEach((item) => {
+            const priceString = item.price.replace('$', ''); // Remove the dollar sign
+            const priceNumber = parseFloat(priceString); // Convert to a floating-point number
+            totalPrice += priceNumber * item.quantity; // Multiply by quantity
+        });
+        setTotalPrice("$" + totalPrice.toFixed(2));
+        // subtotal
     };
 
 
@@ -21,6 +32,16 @@ export default function cart() {
         const storedCart = localStorage.getItem('shoppingCart');
         if (storedCart) {
             setShoppingCart(JSON.parse(storedCart));
+
+            // subtotal
+            let totalPrice = 0;
+            JSON.parse(storedCart).forEach((item) => {
+                const priceString = item.price.replace('$', ''); // Remove the dollar sign
+                const priceNumber = parseFloat(priceString); // Convert to a floating-point number
+                totalPrice += priceNumber * item.quantity; // Multiply by quantity
+            });
+            setTotalPrice("$" + totalPrice.toFixed(2));
+            // subtotal
         }
     }, []);
 
@@ -75,10 +96,9 @@ export default function cart() {
                                     </div>
                                 </li>
 
-
-
                             ))}
                         </ul>
+                        <div className="mt-12 mb-6  text-right font-semibold text-green-700">Subtotal: <span className="text-2xl font-bold text-green-700">{totalPrice}</span></div>
                     </div>
                 </div>
             )}
