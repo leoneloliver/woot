@@ -7,8 +7,6 @@ export default function CarouselProducts() {
 
   const [latests, setLatests] = useState([]);
 
-
-
   var settings = {
     dots: true,
     infinite: true,
@@ -65,25 +63,18 @@ export default function CarouselProducts() {
         
       }
     }
-  }
-       
+  }       
   `;
-
-
 
   useEffect(() => {
     fetchData(query, 'storeCollection')
       .then((data) => {
         setLatests(data);
-        
       })
       .catch((error) => {
         console.error(error);
-        
       });
   }, []);
-
-
 
   return (
     <>
@@ -93,18 +84,15 @@ export default function CarouselProducts() {
       </h3>
         <p className="text-center- mb-12">Deals our customers love best.</p>
         <div className="bg-gray-50 pt-4">
-        <Slider {...settings}>
-        {latests.map((product) => (
-          <a href={product.slug} key={product.slug} className="col-3 col-6-md col-12-sm">
-          <Card product={product} />
-        </a>
-        ))}
-      </Slider>
-
+          <Slider {...settings}>
+            {latests.map((product) => (
+              <a href={product.slug} key={product.slug} className="col-3 col-6-md col-12-sm">
+              <Card product={product} />
+            </a>
+            ))}
+          </Slider>
         </div>
     </div>
-
-
     </>
   )
 }

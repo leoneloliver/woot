@@ -14,8 +14,15 @@ const Results = ({ productsData }) => {
   const { keyword } = router.query;
   const currentPathname = router.asPath;
   const [loading, setLoading] = useState(true);
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   useEffect(() => {
+
+    const storedCart = localStorage.getItem('shoppingCart');
+    if (storedCart) {
+      setShoppingCart(JSON.parse(storedCart));
+    }
+
     if (productsData) {
       setLoading(false);
     }
@@ -25,7 +32,7 @@ const Results = ({ productsData }) => {
 
   return (
     <>
-      <Header router={currentPathname} />
+      <Header rrouter={currentPathname} shoppingCart={shoppingCart.length}/>
       <Head>
         <title>{metaTitle}</title>
         <meta name="description" content={metaTitle} />

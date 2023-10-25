@@ -12,6 +12,8 @@ function Latest() {
   const [latests, setLatests] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const [shoppingCart, setShoppingCart] = useState([]);
+
 
   const query = `
   query{
@@ -37,6 +39,13 @@ function Latest() {
   `;
 
   useEffect(() => {
+
+    const storedCart = localStorage.getItem('shoppingCart');
+    if (storedCart) {
+      setShoppingCart(JSON.parse(storedCart));
+    }
+
+
     fetchData(query, 'storeCollection')
       .then((data) => {
         setLatests(data);
@@ -50,10 +59,13 @@ function Latest() {
       });
   }, []);
 
+
+ 
+
   return (
     <>
 
-      <Header />
+      <Header shoppingCart={shoppingCart.length}/>
       <Carousel />
       <div className="container mx-auto px-4 max-w-screen-xl pt-12 pb-6">
 

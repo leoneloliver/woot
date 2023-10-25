@@ -1,5 +1,5 @@
 import fetchData from '../../utils/fetchData';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from 'next/head';
 import Loader from '../../components/Loader';
 import Link from "next/link";
@@ -11,6 +11,8 @@ import Footer from '../../components/Footer';
 
 
 const Details = ({ productsData }) => {
+
+  const [shoppingCart, setShoppingCart] = useState([]);
 
   const router = useRouter();
   const currentPathname = router.asPath;
@@ -25,11 +27,19 @@ const Details = ({ productsData }) => {
     setLoading(false);
   }, 100);
 
+  useEffect(() => {
+    const storedCart = localStorage.getItem('shoppingCart');
+    if (storedCart) {
+        setShoppingCart(JSON.parse(storedCart));
+    }
+  }, []);
+
 
   return (
 
     <>
-      <Header router={currentPathname} />
+      <Header router={currentPathname} shoppingCart={shoppingCart.length} />
+      
       <Head>
         <title>{productsData[0].linkedFrom.storeCollection.items[0].category.categoryName}</title>
         <meta name="description" content={metaTitle} />

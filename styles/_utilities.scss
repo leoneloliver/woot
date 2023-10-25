@@ -87,6 +87,17 @@ nav, .footer{
 #default-search:focus{
     outline: none;
 }
+.cart-quantity{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: -50px;
+    margin-left: 131px;
+}
+#btn-quantity{
+    cursor: pointer;
+    z-index: 999999;
+}
 @media (max-width:950px)  {
     .search-bar{
         display: none;

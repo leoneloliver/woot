@@ -4,8 +4,7 @@ import { MdOutlineForum } from 'react-icons/md';
 import SearchBar from '../components/SearchBar';
 import Bar from "./Bar";
 
-
-export default function Header({router}) {
+export default function Header({router, shoppingCart}) {
 
   let currentPathname = "/";
   if(router){
@@ -35,8 +34,9 @@ export default function Header({router}) {
             <ul className="flex flex-row">
               <li className="px-2 text-4xl text-gray-400 forum">< MdOutlineForum /></li>
               <li className="px-2 text-4xl text-gray-400 border-x border-gray-500 user"><FiUser /></li>
-              <li className="px-2 text-4xl"><FiShoppingCart /></li>
+              <li className="px-2 text-4xl" id="btn-quantity"><a href="/cart"><FiShoppingCart /></a></li>
             </ul>
+            {shoppingCart > 0 && <div className="cart-quantity">{shoppingCart}</div>}
           </div>
             
         </div>
@@ -53,6 +53,7 @@ export default function Header({router}) {
         </div>
       </nav>
       <Bar />
+
 
     </>
   )
