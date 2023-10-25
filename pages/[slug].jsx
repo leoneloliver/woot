@@ -78,12 +78,14 @@ const Details = ({ productData }) => {
     // Get the product details
     const productName = productData[0].productName;
     const price = productData[0].price;
+    const slug = productData[0].slug;
     // Create a new item for the shopping cart
     const newItem = {
       title: productName,
       quantity: selectedQuantity,
       image: selectedPicture, // Replace with the actual image URL
       price: price,
+      slug: slug,
     };
     // Add the item to the shopping cart
     const updatedCart = [...shoppingCart, newItem];

@@ -98,6 +98,13 @@ nav, .footer{
     cursor: pointer;
     z-index: 999999;
 }
+.shopping-cart{
+    ul{
+        li{
+            list-style: none;
+        }
+    }
+}
 @media (max-width:950px)  {
     .search-bar{
         display: none;
