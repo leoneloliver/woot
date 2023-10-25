@@ -87,7 +87,7 @@ export default function cart() {
 
                                         </div>
                                         <div className="flex flex-1 items-end justify-between text-sm">
-                                            <p className="text-gray-500">Qty <span className="text-gray-900 text-1xl font-bold border border-gray-300 py-2 px-5">{item.quantity}</span></p>
+                                            <p className="text-gray-500 mt-4">Qty <span className="text-gray-900 text-1xl font-bold border border-gray-300 py-2 px-5">{item.quantity}</span></p>
 
                                             <div className="flex">
                                                 <button onClick={() => removeItemFromCart(index)} type="button" className="font-large text-gray-600 hover:text-gray-500 text-2xl font-bold"><RiDeleteBin5Line /></button>

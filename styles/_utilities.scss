@@ -104,6 +104,10 @@ nav, .footer{
     }
 }
 @media (max-width:650px)  {
+    .cart-quantity {
+        margin-top: -42px;
+        margin-left: 23px;
+    }
     .slick-arrow{
         display: none !important ;
     }
