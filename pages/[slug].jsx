@@ -225,7 +225,10 @@ const Details = ({ productData }) => {
               <p className='text-3xl mt-6'>{product.price}</p>
 
               <div className='flex flex-wrapper py-4 text-orange-500'>
-                <AiTwotoneStar /><AiTwotoneStar /><AiTwotoneStar /><AiTwotoneStar /><AiOutlineStar /> <span className='text-xs text-green-700 pl-4'>194 Amazon ratings</span>
+                {[...Array(5)].map((_, index) => (
+                  index < product.ratings.items.rating ? <AiTwotoneStar /> : <AiOutlineStar /> 
+                ))}
+                <span className='text-xs text-green-700 pl-4'>{product.ratings.items.total} Amazon ratings</span>
               </div>
 
               <p className='text-xs font-medium py-4'>Shipping <span className="text-xs font-bold">Standard</span></p>
@@ -345,7 +348,7 @@ export async function getServerSideProps(context) {
           categoryName
           categorySlug
         }
-        
+        ratings
       }
     }
   }
