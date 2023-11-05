@@ -69,7 +69,7 @@ export async function getServerSideProps(context) {
 
   const query = `
     query {
-      storeCollection(where: { OR:  [ {productName_contains: "${keyword}"} ] }, limit: 10, order: sys_firstPublishedAt_DESC) {
+      storeCollection(where: { OR:  [ {productName_contains: "${keyword}"},{ keywords_contains: "${keyword}" } ] }, limit: 10, order: sys_firstPublishedAt_DESC) {
         items {
           productName
           slug
