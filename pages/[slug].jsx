@@ -226,7 +226,7 @@ const Details = ({ productData }) => {
 
               <div className='flex flex-wrapper py-4 text-orange-500'>
                 {[...Array(5)].map((_, index) => (
-                  index < product.ratings.items.rating ? <AiTwotoneStar /> : <AiOutlineStar /> 
+                  index < product.ratings.items.rating ? <span key={index}><AiTwotoneStar /></span> : <span key={index}><AiOutlineStar /> </span>
                 ))}
                 <span className='text-xs text-green-700 pl-4'>{product.ratings.items.total} Amazon ratings</span>
               </div>
