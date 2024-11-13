@@ -6,8 +6,6 @@ export default function Carousel() {
 
   const [latests, setLatests] = useState([]);
 
-
-
   var settings = {
     dots: true,
     infinite: true,
@@ -51,24 +49,21 @@ export default function Carousel() {
           image{
             url
           }
-          
         }
       }
     }
-       
+
   `;
-
-
 
   useEffect(() => {
     fetchData(query, 'bannersCollection')
       .then((data) => {
         setLatests(data);
-        
+
       })
       .catch((error) => {
         console.error(error);
-        
+
       });
   }, []);
 
@@ -76,17 +71,17 @@ export default function Carousel() {
 
   return (
     <>
-    
+
     <div className="no-padding container mx-auto px-4 max-w-screen-xl pt-20 pb-6">
       <Slider {...settings}>
         {latests.map((banner, index) => (
           <div key={index} className="slide-item">
-            
+
             <div className="card mt-30">
-              <img src={banner.image.url} alt="Card Image"/>
-             
+              <img src={banner.image.url}/>
+
             </div>
-            
+
           </div>
         ))}
       </Slider>
