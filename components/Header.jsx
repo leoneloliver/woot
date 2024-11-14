@@ -4,8 +4,10 @@ import { MdOutlineForum } from 'react-icons/md';
 import { useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import Bar from './Bar';
+import ProductDropDown from '../components/ProductDropDown';
 
 export default function Header({ router, shoppingCart }) {
+  const [ShowProduct, setShowProduct] = useState();
 
   let currentPathname = '/';
   if (router) {
@@ -69,8 +71,16 @@ export default function Header({ router, shoppingCart }) {
                   ? 'underline text-green-700'
                   : ''
               }`}
+              onMouseEnter={() => setShowProduct('electronics')}
+              onMouseLeave={() => setShowProduct(false)}
             >
               <Link href={`/category/electronics`}>Electronics</Link>
+              <div className="absolute left-0 top-full hidden md:block">
+                <ProductDropDown
+                  category={'electronics'}
+                  show={ShowProduct === 'electronics'}
+                />
+              </div>
             </li>
             <li
               className={`px-4 py-2 hover:text-green-700 relative ${
@@ -78,9 +88,18 @@ export default function Header({ router, shoppingCart }) {
                   ? 'underline text-green-700'
                   : ''
               }`}
+              onMouseEnter={() => setShowProduct('computers')}
+              onMouseLeave={() => setShowProduct(false)}
             >
               <Link href={`/category/computers`}>Computers</Link>
+              <div className="absolute left-0 top-full hidden md:block">
+                <ProductDropDown
+                  category={'computers'}
+                  show={ShowProduct === 'computers'}
+                />
+              </div>
             </li>
+
             <li
               className={`px-4 py-2 hover:text-green-700 relative ${
                 currentPathname.includes('tools-and-garden')
